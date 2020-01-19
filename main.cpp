@@ -7,7 +7,6 @@
 using namespace std;
 
 HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-CppEssentials essentials;
 void hashFinished(string hashKey);
 
 int main(int argc, char *argv[], char *envp[])
