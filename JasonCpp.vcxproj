@@ -150,13 +150,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="brute.cpp" />
-    <ClCompile Include="CppEssentials.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="md5.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="brute.h" />
-    <ClInclude Include="CppEssentials.h" />
     <ClInclude Include="help.h" />
     <ClInclude Include="md5.h" />
   </ItemGroup>
