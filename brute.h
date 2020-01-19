@@ -5,5 +5,5 @@ using namespace std;
 class Brute
 {
 public:
-	static string bruteattack(string hash);
+	static string bruteattack(string hash, bool visualization);
 };
