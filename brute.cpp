@@ -1,6 +1,4 @@
 #include "brute.h"
-#include "hash.h"
-#include <algorithm>
 
 string performHash(string key, string hashtype) {
 	if (hashtype == "md5") {
