@@ -23,10 +23,10 @@ string detectHash(string hash) {
 	else return "";
 }
 
-string Brute::bruteattack(string hash, bool visualization) {
+string Brute::bruteattack(string hash, bool visualization, string hashType) {
 	string alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 	string hashKey;
-	string hashType = detectHash(hash);
+	/*string hashType = detectHash(hash);*/
 	cout << "Hash type detected: " << hashType << endl;
 
 	if (visualization == true) {

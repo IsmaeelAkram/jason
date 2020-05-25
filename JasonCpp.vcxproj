@@ -155,13 +155,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="brute.cpp" />
-    <ClCompile Include="computer.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="hash.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="brute.h" />
-    <ClInclude Include="computer.h" />
     <ClInclude Include="help.h" />
     <ClInclude Include="hash.h" />
   </ItemGroup>

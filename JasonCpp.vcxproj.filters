@@ -21,9 +21,6 @@
     <ClCompile Include="brute.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="computer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="hash.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -33,9 +30,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="help.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="computer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="hash.h">

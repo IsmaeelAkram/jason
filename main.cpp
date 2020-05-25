@@ -2,16 +2,15 @@
 #include <Windows.h>
 #include <chrono>
 #include <ctime>
+#include "rang.hpp"
 #include "argh.h"
 #include "brute.h"
 #include "help.h"
-#include "computer.h"
 
 using namespace std;
+using namespace rang;
 
-HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 void hashFinished(string hashKey, chrono::duration<double> elapsed_time);
-void getSpecs();
 
 int main(int argc, char *argv[], char *envp[])
 {
@@ -23,46 +22,37 @@ int main(int argc, char *argv[], char *envp[])
 	argh::parser cmdl(argv);
 
 	bool visualization = false;
-	if (cmdl[{"-v", "--visualization", "--verbose"}])
-		visualization = true;
+	if (cmdl({ "-v", "--visualization", "--verbose" }) >> visualization);
 
 	string hash;
-	cmdl(1) >> hash;
-	if (hash == "") {
-		Help::argHelp();
-		return 0;
-	}
+	if (cmdl({ "-s", "--string", "--hash" }) >> hash);
+	else { cout << fg::red << "Please specify a hash with -s!" << fg::reset << endl; return 0; }
 
-	getSpecs();
-	cout << endl << "Commencing attack..." << endl << endl;
+	string hashType;
+	if (cmdl({ "-t", "--type" }) >> hashType);
+	else { cout << fg::red << "Please specify a type with -t!" << fg::reset << endl; return 0; }
+
+	cout << endl << fg::green << "Commencing attack..." << fg::reset << endl << endl;
 
 	auto start = chrono::system_clock::now();
-	string hashKey = Brute::bruteattack(hash, visualization);
+	
+	string hashKey = Brute::bruteattack(hash, visualization, hashType);
+
 	auto end = chrono::system_clock::now();
 	chrono::duration<double> elapsed_seconds = end - start;
 
-	if (visualization == true) cout << "\r";
 	hashFinished(hashKey, elapsed_seconds);
 }
 
 void hashFinished(string hashKey, chrono::duration<double> elapsed_time) {
-	cout << "Key found! [";
-	SetConsoleTextAttribute(hConsole, 10);
-	cout << hashKey;
-	SetConsoleTextAttribute(hConsole, 7); 
-	cout << "]" << endl;
+	cout << "Key found! [" << bg::green << hashKey << bg::reset << "]" << endl;
 
 	string alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 	int attempts = hashKey.length() * alphabet.length();
-	cout << "Attempts: " << attempts << endl;
-	cout << "Elapsed time: " << elapsed_time.count() << " seconds" << endl;
+	cout << "Attempts: " << fg::green << attempts << fg::reset << endl;
+	cout << "Elapsed time: " << fg::green << elapsed_time.count() << " seconds" << fg::reset << endl;
 
-	/*Beep(1500, 500);
 	Beep(1500, 500);
-	Beep(1500, 500);*/
-}
-
-void getSpecs() {
-	cout << "CPU: " << Computer::getCPU() << " cores" << endl;
-	cout << "RAM: " << Computer::getRAM() << " KB" << endl;
+	Beep(1500, 500);
+	Beep(1500, 500);
 }
