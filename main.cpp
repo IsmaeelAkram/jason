@@ -41,9 +41,7 @@ int main(int argc, char *argv[], char *envp[])
 	auto end = chrono::system_clock::now();
 	chrono::duration<double> elapsed_seconds = end - start;
 
-	if (visualization == true) {
-		cout << "\r";
-	}
+	if (visualization == true) cout << "\r";
 	hashFinished(hashKey, elapsed_seconds);
 }
 
