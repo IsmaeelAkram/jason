@@ -9,4 +9,4 @@ The best and fastest hash cracker, written in C++.
 
 **hashType**: The hashing algorithm used to crack the hash. (MD5, SHA1, NTLM, etc.) (**Required**)
 
-**-v**: Visualizing cracking. (slower) (**Required**)
+**-v**: Visualizing cracking. (slower) (**Optional**)
