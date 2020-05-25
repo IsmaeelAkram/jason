@@ -2,6 +2,7 @@
 #include <Windows.h>
 #include <chrono>
 #include <ctime>
+#include "argh.h"
 #include "brute.h"
 #include "help.h"
 #include "computer.h"
@@ -16,24 +17,34 @@ int main(int argc, char *argv[], char *envp[])
 {
 	if (argc <= 1) {
 		Help::argHelp();
+		return 0;
 	}
-	else {
-		string hash = argv[1];
-		bool visualization = argv[2];
 
-		getSpecs();
-		cout << endl << "Commencing attack..." << endl << endl;
+	argh::parser cmdl(argv);
 
-		auto start = chrono::system_clock::now();
-		string hashKey = Brute::bruteattack(hash, visualization);
-		auto end = chrono::system_clock::now();
-		chrono::duration<double> elapsed_seconds = end - start;
+	bool visualization = false;
+	if (cmdl[{"-v", "--visualization", "--verbose"}])
+		visualization = true;
 
-		if (visualization == true) {
-			cout << "\r";
-		}
-		hashFinished(hashKey, elapsed_seconds);
+	string hash;
+	cmdl(1) >> hash;
+	if (hash == "") {
+		Help::argHelp();
+		return 0;
 	}
+
+	getSpecs();
+	cout << endl << "Commencing attack..." << endl << endl;
+
+	auto start = chrono::system_clock::now();
+	string hashKey = Brute::bruteattack(hash, visualization);
+	auto end = chrono::system_clock::now();
+	chrono::duration<double> elapsed_seconds = end - start;
+
+	if (visualization == true) {
+		cout << "\r";
+	}
+	hashFinished(hashKey, elapsed_seconds);
 }
 
 void hashFinished(string hashKey, chrono::duration<double> elapsed_time) {
