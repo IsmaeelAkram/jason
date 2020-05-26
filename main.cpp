@@ -11,7 +11,7 @@
 using namespace std;
 using namespace rang;
 
-void hashFinished(string hashKey, chrono::duration<double> elapsed_time);
+void hashFinished(string hashKey, chrono::duration<double> elapsed_time, string alphabet);
 
 int main(int argc, char *argv[], char *envp[])
 {
@@ -50,17 +50,16 @@ int main(int argc, char *argv[], char *envp[])
 	chrono::duration<double> elapsed_seconds = end - start;
 
 	if (!(hashKey == "")) {
-		hashFinished(hashKey, elapsed_seconds);
+		hashFinished(hashKey, elapsed_seconds, alphabet);
 	}
 	else {
 		cout << fg::red << "Cracking failed. Try using the default alphabet." << fg::reset << endl;
 	}
 }
 
-void hashFinished(string hashKey, chrono::duration<double> elapsed_time) {
+void hashFinished(string hashKey, chrono::duration<double> elapsed_time, string alphabet) {
 	cout << "Key found! [" << bg::green << hashKey << bg::reset << "]" << endl;
 
-	string alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 	int attempts = pow(alphabet.length(), hashKey.length());
 	cout << "Attempts: " << fg::green << attempts << fg::reset << endl;
 	cout << "Elapsed time: " << fg::green << elapsed_time.count() << " seconds" << fg::reset << endl;
