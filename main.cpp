@@ -2,6 +2,7 @@
 #include <Windows.h>
 #include <chrono>
 #include <ctime>
+#include <math.h>
 #include "rang.hpp"
 #include "argh.h"
 #include "brute.h"
@@ -32,23 +33,35 @@ int main(int argc, char *argv[], char *envp[])
 	if (cmdl({ "-t", "--type" }) >> hashType);
 	else { cout << fg::red << "Please specify a type with -t!" << fg::reset << endl; return 0; }
 
-	cout << endl << fg::green << "Commencing attack..." << fg::reset << endl << endl;
+	string alphabet;
+	if (cmdl({ "-a", "--alphabet" }) >> alphabet);
+	else {
+		cout << fg::yellow << "No alphabet specified. Using default alphabet (abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789)" << fg::reset << endl;
+		alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+	}
+
+	cout << fg::green << "Commencing attack..." << fg::reset << endl << endl;
 
 	auto start = chrono::system_clock::now();
 	
-	string hashKey = Brute::bruteattack(hash, visualization, hashType);
+	string hashKey = Brute::bruteattack(hash, visualization, hashType, alphabet);
 
 	auto end = chrono::system_clock::now();
 	chrono::duration<double> elapsed_seconds = end - start;
 
-	hashFinished(hashKey, elapsed_seconds);
+	if (!(hashKey == "")) {
+		hashFinished(hashKey, elapsed_seconds);
+	}
+	else {
+		cout << fg::red << "Cracking failed. Try using the default alphabet." << fg::reset << endl;
+	}
 }
 
 void hashFinished(string hashKey, chrono::duration<double> elapsed_time) {
 	cout << "Key found! [" << bg::green << hashKey << bg::reset << "]" << endl;
 
 	string alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-	int attempts = hashKey.length() * alphabet.length();
+	int attempts = pow(alphabet.length(), hashKey.length());
 	cout << "Attempts: " << fg::green << attempts << fg::reset << endl;
 	cout << "Elapsed time: " << fg::green << elapsed_time.count() << " seconds" << fg::reset << endl;
 
