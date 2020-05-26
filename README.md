@@ -12,3 +12,16 @@ The best and fastest hash cracker, written in C++.
 **-v**: Visualizing cracking. (slower) (**Optional**)
 
 **alphabet**: Custom alphabet for cracking. If you leave this blank, it will use the default alphanumeric alphabet that comes with Jason (**Optional**)
+
+## Supported Hash Algorithms
+- MD5
+- NTLM
+- SHA1
+- SHA256
+- SHA384
+- SHA512
+- And it's very easy to add your own custom algorithm in the **hash.cpp** file.
+
+## TODO
+- Add optional GPU cracking (much faster).
+- Add custom algorithms.
