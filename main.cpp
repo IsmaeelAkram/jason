@@ -1,5 +1,4 @@
 #include <iostream>
-#include <Windows.h>
 #include <chrono>
 #include <ctime>
 #include <math.h>
@@ -62,8 +61,4 @@ void hashFinished(string hashKey, chrono::duration<double> elapsed_time, string 
 	int attempts = pow(alphabet.length(), hashKey.length());
 	cout << "Attempts: " << fg::green << attempts << fg::reset << endl;
 	cout << "Elapsed time: " << fg::green << elapsed_time.count() << " seconds" << fg::reset << endl;
-
-	Beep(1500, 500);
-	Beep(1500, 500);
-	Beep(1500, 500);
 }
