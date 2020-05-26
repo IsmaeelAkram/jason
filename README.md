@@ -1,4 +1,4 @@
-![Jason](https://raw.githubusercontent.com/ismaeelakram/jason/master/logo.png)
+![Jason](https://raw.githubusercontent.com/ismaeelakram/jason/master/logo.png?raw=true)
 
 The best and fastest hash cracker, written in C++.
 
