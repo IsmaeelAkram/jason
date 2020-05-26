@@ -60,7 +60,7 @@ string Brute::bruteattack(string hash, bool visualization, string hashType, stri
 			for (char c3 : alphabet) {
 				for (char c4 : alphabet) {
 					if(visualization == true) cout << "\r" << c << c2 << c3 << c4;
-					if (performHash(string(1, c) + string(1, c2) + string(1, c3), hashType) == hash) {
+					if (performHash(string(1, c) + string(1, c2) + string(1, c3) + string(1, c4), hashType) == hash) {
 						return string(1, c) + string(1, c2) + string(1, c3) + string(1, c4);
 					}
 				}

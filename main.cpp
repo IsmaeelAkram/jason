@@ -31,7 +31,6 @@ int main(int argc, char *argv[], char *envp[])
 
 	string hashType;
 	if (cmdl({ "-t", "--type" }) >> hashType);
-	else { cout << fg::red << "Please specify a type with -t!" << fg::reset << endl; return 0; }
 
 	string alphabet;
 	if (cmdl({ "-a", "--alphabet" }) >> alphabet);
