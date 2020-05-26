@@ -11,4 +11,4 @@ The best and fastest hash cracker, written in C++.
 
 **-v**: Visualizing cracking. (slower) (**Optional**)
 
-**-a**: Custom alphabet for cracking. If you leave this blank, it will use the default alphanumeric alphabet that comes with Jason (**Optional**)
+**alphabet**: Custom alphabet for cracking. If you leave this blank, it will use the default alphanumeric alphabet that comes with Jason (**Optional**)
