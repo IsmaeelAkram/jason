@@ -12,7 +12,7 @@ string performHash(string key, string hashtype) {
 }
 
 string detectHash(string hash) {
-	if (hash.length() == 32 && !all_of(hash.begin(), hash.end(), [](unsigned char c) { return isupper(c); })) return "md5";
+	if (hash.length() == 32) return "md5";
 	else if (hash.length() == 40) return "sha1";
 	else if (hash.length() == 64) return "sha256";
 	else if (hash.length() == 96) return "sha384";
