@@ -15,13 +15,14 @@ void hashFinished(string hashKey, chrono::duration<double> elapsed_time, string 
 int main(int argc, char *argv[], char *envp[])
 {
 	if (argc <= 1) {
-		Help::argHelp();
+		cout << "No args specified!" << endl;
+		cout << "Example: jason -s=<hash>" << endl;
 		return 0;
 	}
 
 	argh::parser cmdl(argv);
 
-	bool visualization = false;
+	bool visualization;
 	if (cmdl({ "-v", "--visualization", "--verbose" }) >> visualization);
 
 	string hash;
