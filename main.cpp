@@ -5,7 +5,6 @@
 #include "rang.hpp"
 #include "argh.h"
 #include "brute.h"
-#include "help.h"
 
 using namespace std;
 using namespace rang;
