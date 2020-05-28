@@ -14,8 +14,8 @@ void hashFinished(string hashKey, chrono::duration<double> elapsed_time, string 
 int main(int argc, char *argv[], char *envp[])
 {
 	if (argc <= 1) {
-		cout << "No args specified!" << endl;
-		cout << "Example: jason -s=<hash>" << endl;
+		cout << fg::red << "No args specified!" << fg::reset << endl;
+		cout << fg::yellow << "Example: jason -s=<hash>" << fg::reset << endl;
 		return 0;
 	}
 
