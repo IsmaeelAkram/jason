@@ -1,4 +1,4 @@
 g++ *.cpp *.h *.hpp -o jason
-export PATH=$PATH":$(pwd)"
+export PATH=$PATH:.
 chmod +x jason
 . ~/.profile
