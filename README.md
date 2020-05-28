@@ -7,7 +7,7 @@ The best and fastest hash cracker, written in C++.
 
 **hash**: The hash you want to crack. (**Required**)
 
-**hashType**: The hashing algorithm used to crack the hash. (MD5, SHA1, NTLM, etc.) (**Required**)
+**hashType**: The hashing algorithm used to crack the hash. (MD5, SHA1, NTLM, etc.) If this is left blank, Jason will attempt to auto-detect the algorithm. (**Optional**)
 
 **-v**: Visualizing cracking. (slower) (**Optional**)
 
