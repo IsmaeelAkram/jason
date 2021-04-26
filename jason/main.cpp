@@ -22,19 +22,21 @@ int main(int argc, char *argv[], char *envp[])
     argh::parser cmdl(argv);
 
     bool visualization;
-    if (cmdl({ "-v", "--visualization", "--verbose" }) >> visualization);
+    if (cmdl({ "-v", "--verbose" }) >> visualization)
+        ;
 
     string hash;
     if (cmdl({ "-s", "--string", "--hash" }) >> hash);
     else { cout << fg::red << "Please specify a hash with -s!" << fg::reset << endl; return 0; }
 
     string hashType;
-    if (cmdl({ "-t", "--type" }) >> hashType);
+    if (cmdl({ "-t", "--type" }) >> hashType)
+        ;
 
     string alphabet;
     if (cmdl({ "-a", "--alphabet" }) >> alphabet);
     else {
-        cout << fg::yellow << "No alphabet specified. Using default alphabet (abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789)" << fg::reset << endl;
+        cout << fg::yellow << "No alphabet specified. Using default alphabet" << fg::reset << endl;
         alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     }
 

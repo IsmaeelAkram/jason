@@ -4,10 +4,6 @@ string performHash(string key, string hashtype) {
 	if (hashtype == "md5") {
 		return md5(key);
 	}
-	if (hashtype == "ntlm") {
-		char* key_ = &key[0];
-		return "";
-	}
 	return "";
 }
 
@@ -17,6 +13,7 @@ string detectHash(string hash) {
 	else if (hash.length() == 64) return "sha256";
 	else if (hash.length() == 96) return "sha384";
 	else if (hash.length() == 128) return "sha512";
+    // TODO: Setup NTLM detection
 	else return "";
 }
 
