@@ -36,6 +36,7 @@
 		F0B27BBF2636BD6D005BE283 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		F0B27BC02636BD73005BE283 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
 		F0B27BC12636BD78005BE283 /* install-linux.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "install-linux.sh"; sourceTree = SOURCE_ROOT; };
+		F0B27BC32636BF0A005BE283 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +79,7 @@
 				F0B27BBF2636BD6D005BE283 /* README.md */,
 				F0B27BC02636BD73005BE283 /* LICENSE */,
 				F0B27BC12636BD78005BE283 /* install-linux.sh */,
+				F0B27BC32636BF0A005BE283 /* .gitignore */,
 			);
 			path = jason;
 			sourceTree = "<group>";
