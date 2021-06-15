@@ -1,5 +1,5 @@
 /* interface header */
-#include "hash.h"
+#include "md5.h"
 /* system implementation headers */
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>

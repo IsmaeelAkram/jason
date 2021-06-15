@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		F0768C8826794EB300F9ED04 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = F0768C8726794EB300F9ED04 /* Makefile */; };
 		F0B27BA62636BB6F005BE283 /* brute.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F0B27B9F2636BB6F005BE283 /* brute.cpp */; };
-		F0B27BA72636BB6F005BE283 /* hash.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F0B27BA22636BB6F005BE283 /* hash.cpp */; };
+		F0B27BA72636BB6F005BE283 /* md5.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F0B27BA22636BB6F005BE283 /* md5.cpp */; };
 		F0B27BAD2636BBEF005BE283 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F0B27BAC2636BBEF005BE283 /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -30,9 +30,9 @@
 		F0768C8E26794EDC00F9ED04 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F0B27B942636BB49005BE283 /* jason */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = jason; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0B27B9F2636BB6F005BE283 /* brute.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = brute.cpp; sourceTree = "<group>"; };
-		F0B27BA02636BB6F005BE283 /* hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hash.h; sourceTree = "<group>"; };
+		F0B27BA02636BB6F005BE283 /* md5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = md5.h; sourceTree = "<group>"; };
 		F0B27BA12636BB6F005BE283 /* argh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = argh.h; sourceTree = "<group>"; };
-		F0B27BA22636BB6F005BE283 /* hash.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hash.cpp; sourceTree = "<group>"; };
+		F0B27BA22636BB6F005BE283 /* md5.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = md5.cpp; sourceTree = "<group>"; };
 		F0B27BA32636BB6F005BE283 /* rang.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = rang.hpp; sourceTree = "<group>"; };
 		F0B27BA52636BB6F005BE283 /* brute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = brute.h; sourceTree = "<group>"; };
 		F0B27BAC2636BBEF005BE283 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -77,8 +77,8 @@
 				F0B27B9F2636BB6F005BE283 /* brute.cpp */,
 				F0B27BA52636BB6F005BE283 /* brute.h */,
 				F0B27BAC2636BBEF005BE283 /* main.cpp */,
-				F0B27BA22636BB6F005BE283 /* hash.cpp */,
-				F0B27BA02636BB6F005BE283 /* hash.h */,
+				F0B27BA22636BB6F005BE283 /* md5.cpp */,
+				F0B27BA02636BB6F005BE283 /* md5.h */,
 				F0B27BA32636BB6F005BE283 /* rang.hpp */,
 				F0B27BBF2636BD6D005BE283 /* README.md */,
 				F0B27BC02636BD73005BE283 /* LICENSE */,
@@ -144,7 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0B27BA62636BB6F005BE283 /* brute.cpp in Sources */,
-				F0B27BA72636BB6F005BE283 /* hash.cpp in Sources */,
+				F0B27BA72636BB6F005BE283 /* md5.cpp in Sources */,
 				F0768C8826794EB300F9ED04 /* Makefile in Sources */,
 				F0B27BAD2636BBEF005BE283 /* main.cpp in Sources */,
 			);

@@ -2,7 +2,7 @@
 #include <string>
 #include <algorithm>
 #include "rang.hpp"
-#include "hash.h"
+#include "md5.h"
 
 using namespace std;
 using namespace rang;
