@@ -27,4 +27,5 @@ make
 - SHA256
 - SHA384
 - SHA512
+
 And it's very easy to add your own custom algorithm in `brute.cpp:performHash()`!
