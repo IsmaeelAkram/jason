@@ -2,8 +2,16 @@
 
 The easiest hash cracker, written in C++.
 
+## Installation
+No extra libraries are needed!
+```sh
+git clone https://github.com/IsmaeelAkram/jason
+cd jason
+make
+```
+
 ## Usage
-`jason -s=<hash> -t=<hashType> -v -a=<alphabet>`
+`./jas0n -s=<hash> -t=<hashType> -v -a=<alphabet>`
 
 **hash**: The hash you want to crack. (**Required**)
 
