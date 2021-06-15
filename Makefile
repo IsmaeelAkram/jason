@@ -1,6 +1,6 @@
 j: jason/*.h jason/*.cpp jason/*.hpp
-	clang++ jason/*.cpp jason/*.h jason/*.hpp -std=c++11 -stdlib=libc++
-	mv a.out cracker
+	mkdir build
+	clang++ jason/*.cpp -std=c++11 -stdlib=libc++ -o build/jason
 
 clean:
-	rm -rf *.out jason/*.gch *.dSYM
+	rm -rf *.out jason/*.gch *.dSYM build
