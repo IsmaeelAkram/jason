@@ -17,7 +17,7 @@ string detectHash(string hash) {
 	else return "";
 }
 
-string Brute::bruteattack(string hash, bool visualization, string hashType, string alphabet) {
+string Brute::bruteattack(string hash, bool verbose, string hashType, string alphabet) {
 	string hashKey;
 	if (hashType == "") {
 		hashType = detectHash(hash);
@@ -28,19 +28,20 @@ string Brute::bruteattack(string hash, bool visualization, string hashType, stri
 	}
 	cout << "Hash type detected: " << hashType << endl;
 
-	if (visualization == true) {
+	if (verbose == true) {
 		cout << "a";
 	}
 
 	for (char c : alphabet) {
-		if(visualization == true) cout << "\r" << c;
+        if(verbose == true) cout << "\r" << c;
+//        if(verbose == true) printf("\r%s", c);
 		if (performHash(string(1, c), hashType) == hash) {
 			return string(1, c);
 		}
 	}
 	for (char c : alphabet) {
 		for (char c2 : alphabet) {
-			if(visualization == true) cout << "\r" << c << c2;
+			if(verbose == true) cout << "\r" << c << c2;
 			if (performHash(string(1, c) + string(1, c2), hashType) == hash) {
 				return string(1, c) + string(1, c2);
 			}
@@ -49,7 +50,7 @@ string Brute::bruteattack(string hash, bool visualization, string hashType, stri
 	for (char c : alphabet) {
 		for (char c2 : alphabet) {
 			for (char c3 : alphabet) {
-				if(visualization == true) cout << "\r" << c << c2 << c3;
+				if(verbose == true) cout << "\r" << c << c2 << c3;
 				if (performHash(string(1, c) + string(1, c2) + string(1, c3), hashType) == hash) {
 					return string(1, c) + string(1, c2) + string(1, c3);
 				}
@@ -60,7 +61,7 @@ string Brute::bruteattack(string hash, bool visualization, string hashType, stri
 		for (char c2 : alphabet) {
 			for (char c3 : alphabet) {
 				for (char c4 : alphabet) {
-					if(visualization == true) cout << "\r" << c << c2 << c3 << c4;
+					if(verbose == true) cout << "\r" << c << c2 << c3 << c4;
 					if (performHash(string(1, c) + string(1, c2) + string(1, c3) + string(1, c4), hashType) == hash) {
 						return string(1, c) + string(1, c2) + string(1, c3) + string(1, c4);
 					}
@@ -73,7 +74,7 @@ string Brute::bruteattack(string hash, bool visualization, string hashType, stri
 			for (char c3 : alphabet) {
 				for (char c4 : alphabet) {
 					for (char c5 : alphabet) {
-						if(visualization == true) cout << "\r" << c << c2 << c3 << c4 << c5;
+						if(verbose == true) cout << "\r" << c << c2 << c3 << c4 << c5;
 						if (performHash(string(1, c) + string(1, c2) + string(1, c3) + string(1, c4) + string(1, c5), hashType) == hash) {
 							return string(1, c) + string(1, c2) + string(1, c3) + string(1, c4) + string(1, c5);
 						}
@@ -88,7 +89,7 @@ string Brute::bruteattack(string hash, bool visualization, string hashType, stri
 				for (char c4 : alphabet) {
 					for (char c5 : alphabet) {
 						for (char c6 : alphabet) {
-							if(visualization == true) cout << "\r" << c << c2 << c3 << c4 << c5 << c6;
+							if(verbose == true) cout << "\r" << c << c2 << c3 << c4 << c5 << c6;
 							if (performHash(string(1, c) + string(1, c2) + string(1, c3) + string(1, c4) + string(1, c5) + string(1, c6), hashType) == hash) {
 								return string(1, c) + string(1, c2) + string(1, c3) + string(1, c4) + string(1, c5) + string(1, c6);
 							}
@@ -105,7 +106,7 @@ string Brute::bruteattack(string hash, bool visualization, string hashType, stri
 					for (char c5 : alphabet) {
 						for (char c6 : alphabet) {
 							for (char c7 : alphabet) {
-								if(visualization == true) cout << "\r" << c << c2 << c3 << c4 << c5 << c6 << c7;
+								if(verbose == true) cout << "\r" << c << c2 << c3 << c4 << c5 << c6 << c7;
 								if (performHash(string(1, c) + string(1, c2) + string(1, c3) + string(1, c4) + string(1, c5) + string(1, c6) + string(1, c7), hashType) == hash) {
 									return string(1, c) + string(1, c2) + string(1, c3) + string(1, c4) + string(1, c5) + string(1, c6) + string(1, c7);
 								}

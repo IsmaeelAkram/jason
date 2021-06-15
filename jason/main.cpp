@@ -21,17 +21,15 @@ int main(int argc, char *argv[], char *envp[])
 
     argh::parser cmdl(argv);
 
-    bool visualization;
-    if (cmdl({ "-v", "--verbose" }) >> visualization)
-        ;
+    bool verbose;
+    verbose = cmdl[{ "-v", "--verbose" }] ? "ON" : "OFF";
 
     string hash;
     if (cmdl({ "-s", "--string", "--hash" }) >> hash);
     else { cout << fg::red << "Please specify a hash with -s!" << fg::reset << endl; return 0; }
 
     string hashType;
-    if (cmdl({ "-t", "--type" }) >> hashType)
-        ;
+    cmdl({ "-t", "--type" }) >> hashType;
 
     string defaultAlphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     string alphabet = "";
@@ -45,7 +43,7 @@ int main(int argc, char *argv[], char *envp[])
 
     auto start = chrono::system_clock::now();
     
-    string hashKey = Brute::bruteattack(hash, visualization, hashType, alphabet);
+    string hashKey = Brute::bruteattack(hash, verbose, hashType, alphabet);
 
     auto end = chrono::system_clock::now();
     chrono::duration<double> elapsed_seconds = end - start;
@@ -62,6 +60,7 @@ int main(int argc, char *argv[], char *envp[])
 }
 
 void hashFinished(string hashKey, chrono::duration<double> elapsed_time, string alphabet) {
+    cout << endl;
     cout << "Key found! [" << bg::green << hashKey << bg::reset << "]" << endl;
 
     int attempts = pow(alphabet.length(), hashKey.length());
