@@ -22,3 +22,6 @@ DerivedData/
 
 ## Gcc Patch
 /*.gcno
+
+*.gch
+*.out
