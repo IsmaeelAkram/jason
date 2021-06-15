@@ -33,11 +33,12 @@ int main(int argc, char *argv[], char *envp[])
     if (cmdl({ "-t", "--type" }) >> hashType)
         ;
 
-    string alphabet;
+    string defaultAlphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    string alphabet = "";
     if (cmdl({ "-a", "--alphabet" }) >> alphabet);
     else {
         cout << fg::yellow << "No alphabet specified. Using default alphabet" << fg::reset << endl;
-        alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        alphabet = defaultAlphabet;
     }
 
     cout << fg::green << "Commencing attack..." << fg::reset << endl << endl;
@@ -52,8 +53,11 @@ int main(int argc, char *argv[], char *envp[])
     if (!(hashKey == "")) {
         hashFinished(hashKey, elapsed_seconds, alphabet);
     }
+    else if (alphabet != defaultAlphabet){
+        cout << fg::red << "Cracking failed, try using the default alphabet." << fg::reset << endl;
+    }
     else {
-        cout << fg::red << "Cracking failed. Try using the default alphabet." << fg::reset << endl;
+        cout << fg::red << "Cracking failed." << fg::reset << endl;
     }
 }
 

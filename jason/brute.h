@@ -1,8 +1,11 @@
 #include <iostream>
 #include <string>
 #include <algorithm>
+#include "rang.hpp"
 #include "hash.h"
+
 using namespace std;
+using namespace rang;
 
 class Brute
 {

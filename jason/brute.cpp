@@ -22,6 +22,10 @@ string Brute::bruteattack(string hash, bool visualization, string hashType, stri
 	if (hashType == "") {
 		hashType = detectHash(hash);
 	}
+	if(hashType == ""){
+        cout << fg::red << "Hashing algorithm could not be detected. If it is not detected, that most likely means it is not supported but you can always add your own support brute.cpp:performHash()" << fg::reset << endl;
+        return "";
+	}
 	cout << "Hash type detected: " << hashType << endl;
 
 	if (visualization == true) {
