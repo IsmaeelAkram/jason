@@ -23,7 +23,7 @@ DerivedData/
 ## Gcc Patch
 /*.gcno
 
-*
 *.gch
 *.out
 *.dSYM
+jas0n
