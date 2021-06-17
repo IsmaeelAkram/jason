@@ -9,7 +9,8 @@
 			"type": "cppdbg",
 			"request": "launch",
 			"program": "${workspaceFolder}/jas0n",
-			"args": ["-s=2829fc16ad8ca5a79da932f910agad1c"],
+			"cwd": "${workspaceFolder}",
+			"args": ["-s=2829fc16ad8ca5a79da932f910afad2c"],
 			"MIMode": "lldb",
 			"preLaunchTask": "Make"
 		}
