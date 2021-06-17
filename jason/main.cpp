@@ -22,7 +22,7 @@ int main(int argc, char *argv[], char *envp[])
     argh::parser cmdl(argv);
 
     bool verbose = false;
-    verbose = cmdl[{ "-v", "--verbose" }] ? "ON" : "OFF";
+    verbose = cmdl[{ "-v", "--verbose" }];
 
     string hash;
     if (cmdl({ "-s", "--string", "--hash" }) >> hash);
